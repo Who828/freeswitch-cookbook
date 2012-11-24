@@ -110,7 +110,11 @@
     <load module="mod_lua"/>
 
     <!-- ASR /TTS -->
+    <% if node[:freeswitch][:tts_engine] == :flite %>
+    <load module="mod_flite"/>
+    <% else %>
     <!-- <load module="mod_flite"/> -->
+    <% end %>
     <!-- <load module="mod_pocketsphinx"/> -->
     <!-- <load module="mod_cepstral"/> -->
     <!-- <load module="mod_tts_commandline"/> -->

@@ -80,7 +80,11 @@ endpoints/mod_loopback
 #../../libs/openzap/mod_openzap
 #../../libs/freetdm/mod_freetdm
 #asr_tts/mod_unimrcp
+<% if node[:freeswitch][:tts_engine] == :flite %>
+asr_tts/mod_flite
+<% else %>
 #asr_tts/mod_flite
+<% end %>
 #asr_tts/mod_pocketsphinx
 #asr_tts/mod_cepstral
 #asr_tts/mod_tts_commandline
