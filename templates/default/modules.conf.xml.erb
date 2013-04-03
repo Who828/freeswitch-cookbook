@@ -1,6 +1,6 @@
 <configuration name="modules.conf" description="Modules">
   <modules>
-    
+
     <!-- Loggers (I'd load these first) -->
     <load module="mod_console"/>
     <load module="mod_logfile"/>
@@ -16,9 +16,10 @@
     <!-- <load module="mod_xml_rpc"/> -->
     <!-- <load module="mod_xml_curl"/> -->
     <!-- <load module="mod_xml_cdr"/> -->
+    <!-- <load module="mod_xml_scgi"/> -->
 
     <!-- Event Handlers -->
-    <!-- <load module="mod_cdr_csv"/> -->
+    <load module="mod_cdr_csv"/>
     <!-- <load module="mod_cdr_sqlite"/> -->
     <!-- <load module="mod_event_multicast"/> -->
     <load module="mod_event_socket"/>
@@ -47,6 +48,7 @@
     <!-- Applications -->
     <load module="mod_commands"/>
     <load module="mod_conference"/>
+    <!-- load module="mod_curl" -->
     <load module="mod_db"/>
     <load module="mod_dptools"/>
     <load module="mod_expr"/>
@@ -62,7 +64,9 @@
     <load module="mod_valet_parking"/>
     <!--<load module="mod_fsk"/>-->
     <!--<load module="mod_spy"/>-->
+    <!--<load module="mod_random"/>-->
     <load module="mod_httapi"/>
+    <!--<load module="mod_translate"/>-->
 
     <!-- SNOM Module -->
     <!--<load module="mod_snom"/>-->
@@ -80,10 +84,12 @@
     <load module="mod_g723_1"/>
     <load module="mod_g729"/>
     <load module="mod_amr"/>
-    <load module="mod_ilbc"/>
+    <!--<load module="mod_ilbc"/>-->
     <load module="mod_speex"/>
     <load module="mod_h26x"/>
-    <load module="mod_siren"/>
+    <load module="mod_vp8"/>
+    <load module="mod_b64"/>
+    <!--<load module="mod_siren"/>-->
     <!--<load module="mod_isac"/>-->
     <!--<load module="mod_celt"/>-->
     <!--<load module="mod_opus"/>-->
@@ -110,12 +116,12 @@
     <load module="mod_lua"/>
 
     <!-- ASR /TTS -->
-    <!-- <load module="mod_flite"/> -->
+    <load module="mod_flite"/>
     <!-- <load module="mod_pocketsphinx"/> -->
     <!-- <load module="mod_cepstral"/> -->
     <!-- <load module="mod_tts_commandline"/> -->
     <!-- <load module="mod_rss"/> -->
-    
+
     <!-- Say -->
     <load module="mod_say_en"/>
     <!-- <load module="mod_say_ru"/> -->
