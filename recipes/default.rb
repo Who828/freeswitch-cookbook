@@ -62,7 +62,7 @@ script "compile_freeswitch" do
   make
   make install
   make samples
-EOF
+  EOF
   not_if "test -f #{node[:freeswitch][:path]}/freeswitch"
 end
 
@@ -171,7 +171,7 @@ template "#{node[:freeswitch][:homedir]}/conf/dialplan/default.xml" do
   group node[:freeswitch][:group]
   mode 0755
   variables :head_fragments => node[:freeswitch][:dialplan][:head_fragments],
-            :tail_fragments => node[:freeswitch][:dialplan][:tail_fragments]
+    :tail_fragments => node[:freeswitch][:dialplan][:tail_fragments]
 end
 
 template "#{node[:freeswitch][:homedir]}/conf/autoload_configs/event_socket.conf.xml" do
@@ -181,10 +181,10 @@ template "#{node[:freeswitch][:homedir]}/conf/autoload_configs/event_socket.conf
   mode 0755
 end
 
-#template "" do
-#  source "modules.conf.xml.erb"
-#  owner node[:freeswitch][:user]
-#  group node[:freeswitch][:group]
-#  mode 0644
-#  notifies :restart, "service[#{node[:freeswitch][:service]}]"
-#end
+template "#{node[:freeswitch][:homedir]}/conf/autoload_configs/modules.conf.xml" do
+  source "modules.conf.xml.erb"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
+  mode 0644
+  notifies :restart, "service[#{node[:freeswitch][:service]}]"
+end
